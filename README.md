@@ -1,9 +1,22 @@
-# Tesla Üretim & Teslimat Analizi (2015–2025)
+<p align="center">
+  <img src="tesla.jpg" width="800">
+</p>
+
+# 🏎️ Tesla Üretim & Teslimat Analizi (2015–2025)
 
 Bu proje, Tesla'nın 2015–2025 yılları arasındaki üretim ve teslimat verilerini kullanarak
 **Production_Units → Estimated_Deliveries** ilişkisini inceleyen basit bir lineer regresyon çalışmasıdır.
 
 Veri seti temizdir, eksik veri içermez ve sayısal olarak güçlü bir doğrusal ilişki barındırır.
+
+## 📦 Proje Yapısı
+ Tesla-Linear-Regression
+ ├── analysis.ipynb                 → Açıklamalı Jupyter Notebook
+ ├── analysis.py                    → Ham Python analiz dosyası
+ ├── tesla_deliveries_dataset_2015_2025.csv   → Veri seti
+ ├── plot.png                       → Scatter plot görseli
+ └── README.md                      → Proje dökümantasyonu
+
 
 ---
 
@@ -21,7 +34,7 @@ Aşağıdaki işlem adımları uygulanmıştır:
 
 ---
 
-## 📦 Veri Seti Özeti
+##  Veri Seti Özeti
 
 | Bilgi | Değer |
 |-------|-------|
@@ -39,7 +52,7 @@ Aşağıdaki işlem adımları uygulanmıştır:
 
 ---
 
-## 📊 Scatter Plot (X → Y İlişkisi)
+##  Scatter Plot (X → Y İlişkisi)
 
 Tesla üretim ve teslimat arasındaki ilişki aşağıdaki grafikte gösterilmektedir:
 
@@ -54,7 +67,7 @@ Tesla üretim ve teslimat arasındaki ilişki aşağıdaki grafikte gösterilmek
 
 ## 🧪 Uygulanan Veri İşleme Adımları
 
-### ✔ Veri Okuma
+### 📘 Veri Okuma
 
 ```python
 df = pd.read_csv("tesla_deliveries_dataset_2015_2025.csv")
@@ -76,7 +89,7 @@ Bu işlemler ile:
 - Sayısal kolonların dağılımı incelendi
 - Modelde kullanacağımız kolonların uygunluğu kontrol edildi
 
-## Eğitim / Test Ayrımı
+## 🖊️ Eğitim / Test Ayrımı
 
 Modeli daha gerçekçi değerlendirmek için veri eğitim/test olarak ayrıldı:
 ```
@@ -112,7 +125,7 @@ Sabit (β₀)	144.56
 R² Skoru	0.9884
 RMSE	415.1
 
-## Hata Hesaplamaları
+## ❌ Hata Hesaplamaları
 
 ### Modelin performansı test verisi üzerinde ölçülmüştür:
 ```
@@ -124,7 +137,7 @@ y_pred = model.predict(X_test)
 r2 = r2_score(y_test, y_pred)
 rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 ```
-## Sonuçların Yorumlanması
+## 💬 Sonuçların Yorumlanması
 
 - R² değerinin 0.98 olması, modelin veriyi neredeyse tamamen açıkladığını gösteriyor.
 
