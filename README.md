@@ -52,7 +52,7 @@ Aşağıdaki işlem adımları uygulanmıştır:
 
 ---
 
-##  Scatter Plot (X → Y İlişkisi)
+##  Korelasyon Grafiği (X → Y İlişkisi)
 
 Tesla üretim ve teslimat arasındaki ilişki aşağıdaki grafikte gösterilmektedir:
 
