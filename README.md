@@ -89,7 +89,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 ## Lineer Regresyon Modeli
 
-Lineer regresyon modeli kurulumu:
+### Lineer regresyon modeli kurulumu:
 
 from sklearn.linear_model import LinearRegression
 
@@ -97,14 +97,14 @@ model = LinearRegression()
 model.fit(X_train, y_train)
 
 
-Model eğitim parametreleri:
+### Model eğitim parametreleri:
 
 slope = model.coef_[0]
 intercept = model.intercept_
 
 ## Model Sonuçları
 
-Aşağıdaki değerlendirme sonuçları elde edilmiştir:
+### Aşağıdaki değerlendirme sonuçları elde edilmiştir:
 
 Metrik	Değer
 Eğim (β₁)	0.9173
@@ -114,7 +114,7 @@ RMSE	415.1
 
 ## Hata Hesaplamaları
 
-Modelin performansı test verisi üzerinde ölçülmüştür:
+### Modelin performansı test verisi üzerinde ölçülmüştür:
 
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
@@ -126,13 +126,13 @@ rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 
 ## Sonuçların Yorumlanması
 
-R² değerinin 0.98 olması, modelin veriyi neredeyse tamamen açıkladığını gösteriyor.
+- R² değerinin 0.98 olması, modelin veriyi neredeyse tamamen açıkladığını gösteriyor.
 
-RMSE düşük, yani tahminler gerçek değerlere yakın.
+- RMSE düşük, yani tahminler gerçek değerlere yakın.
 
-Üretim arttıkça teslimat miktarının doğrusal şekilde arttığı açıkça görülüyor.
+- Üretim arttıkça teslimat miktarının doğrusal şekilde arttığı açıkça görülüyor.
 
-Veri temiz olduğu için model hiçbir ek işlem gerektirmedi.
+- Veri temiz olduğu için model hiçbir ek işlem gerektirmedi.
 
 ## Kullanılan Grafik
 
@@ -141,13 +141,13 @@ Aşağıdaki grafik veri ilişkisini göstermektedir:
 
 ## Genel Değerlendirme
 
-Bu çalışma sonucunda:
+- Bu çalışma sonucunda:
 
-Basit lineer regresyon modeli bu veri için oldukça başarılıdır.
+- Basit lineer regresyon modeli bu veri için oldukça başarılıdır.
 
-Tesla üretim → teslimat ilişkisi net doğrusal bir yapıya sahiptir.
+- Tesla üretim → teslimat ilişkisi net doğrusal bir yapıya sahiptir.
 
-Veri seti temiz, dengeli ve analiz için idealdir.
+- Veri seti temiz, dengeli ve analiz için idealdir.
 
-Üretim miktarı, teslimat miktarını yüksek doğrulukta tahmin edebilmektedir.
+- Üretim miktarı, teslimat miktarını yüksek doğrulukta tahmin edebilmektedir.
 
