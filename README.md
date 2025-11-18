@@ -79,29 +79,29 @@ Bu işlemler ile:
 ## Eğitim / Test Ayrımı
 
 Modeli daha gerçekçi değerlendirmek için veri eğitim/test olarak ayrıldı:
-
+```
 from sklearn.model_selection import train_test_split
 
 X = df[["Production_Units"]]
 y = df["Estimated_Deliveries"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
+```
 ## Lineer Regresyon Modeli
 
 ### Lineer regresyon modeli kurulumu:
-
+```
 from sklearn.linear_model import LinearRegression
 
 model = LinearRegression()
 model.fit(X_train, y_train)
-
+```
 
 ### Model eğitim parametreleri:
-
+```
 slope = model.coef_[0]
 intercept = model.intercept_
-
+```
 ## Model Sonuçları
 
 ### Aşağıdaki değerlendirme sonuçları elde edilmiştir:
@@ -115,7 +115,7 @@ RMSE	415.1
 ## Hata Hesaplamaları
 
 ### Modelin performansı test verisi üzerinde ölçülmüştür:
-
+```
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 
@@ -123,7 +123,7 @@ y_pred = model.predict(X_test)
 
 r2 = r2_score(y_test, y_pred)
 rmse = np.sqrt(mean_squared_error(y_test, y_pred))
-
+```
 ## Sonuçların Yorumlanması
 
 - R² değerinin 0.98 olması, modelin veriyi neredeyse tamamen açıkladığını gösteriyor.
