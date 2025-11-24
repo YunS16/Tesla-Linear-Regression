@@ -7,19 +7,15 @@
 Bu proje, Tesla’nın 2015–2025 yılları arasındaki Quarterly Production ve Estimated Deliveries verilerini kullanarak
 “Üretim → Teslimat” ilişkisini analiz eden basit ama öğretici bir lineer regresyon çalışmasıdır.
 
-Amaç, üretim miktarına bakarak Tesla’nın tahmini teslimat sayısını matematiksel olarak kestirebilmektir.
 
 ## 📦 Proje Yapısı
  Tesla-Linear-Regression
 
 ├── tesla_lineer.ipynb                    → Tüm analiz ve görselleme adımlarını içeren Jupyter Notebook  
 ├── tesla_deliveries_dataset_2015_2025.csv → Tesla üretim & teslimat veri seti  
-├── README.md                             → Bu doküman  
-└── (opsiyonel) görseller
-    ├── korelasyon_matris.png             → Korelasyon matrisi heatmap ekran görüntüsü  
-    └── scatter_regresyon.png             → Gerçek vs Tahmin scatter grafiği  
-
-
+├── README.md                              
+└── img(görseller)
+    
 ---
 ## 📦 Veri Seti Özeti
 
