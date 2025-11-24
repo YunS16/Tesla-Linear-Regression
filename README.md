@@ -87,6 +87,7 @@ plt.title("Correlation Heatmap")
 plt.show()
 
 ```
+Buradaki kodlar ile korelasyon tablomuzu oluşturduk  
 Korelasyon tablosu, üretim ve teslimat sütunları arasında çok yüksek bir doğrusal ilişki bulunduğunu doğrular.
 Bu nedenle lineer regresyon modeli için uygun bir veri setidir.
 
@@ -104,6 +105,7 @@ plt.title("Linear Regression Fit")
 plt.show()
 
 ```
+Buradaki kodlar sayesinde lineer regresyon modelimizi oluşturduk  
 Model tarafından oluşturulan çizgi, tahmin edilen teslimat değerlerini temsil eder.
 Gerçek test verileriyle yakın hizalanması modelin yüksek doğruluğunu gösterir.
 
