@@ -11,6 +11,7 @@ Veri seti temizdir, eksik veri içermez ve sayısal olarak güçlü bir doğrusa
 
 ## 📦 Proje Yapısı
  Tesla-Linear-Regression
+ 
  ├── analysis.ipynb                 → Açıklamalı Jupyter Notebook
  ├── analysis.py                    → Ham Python analiz dosyası
  ├── tesla_deliveries_dataset_2015_2025.csv   → Veri seti
