@@ -42,6 +42,38 @@ Veri seti temizdir, eksik veri içermez ve sayısal olarak güçlü bir doğrusa
 
 ---
 
+## 🎯 Projenin Amacı
+
+Bu projede hedef değişken (y) şudur:
+
+Estimated_Deliveries
+
+Bağımsız değişken (X) ise:
+
+Production_Units
+
+Modelin amacı:
+"Belirli bir üretim miktarına göre kaç araç teslim edileceğini tahmin etmek."
+
+
+## 🧼 Veri Temizleme & Hazırlık Adımları
+
+Notebook içinde yapılan veri hazırlığı şunları içerir:
+
+Dataset’in okunması
+
+Sütun isimlerinin kontrol edilmesi
+
+Eksik değer kontrolü
+
+Üretim ve teslimat verilerinin sayısal formatta doğrulanması
+
+Basit EDA (İlk 5 satır / info / describe)
+
+Scatter plot ile doğrusal ilişkinin görselleştirilmesi
+
+Veri seti zaten temiz olduğundan ek bir doldurma veya filtreleme işlemine ihtiyaç duyulmamıştır.
+
 
 ## Korelasyon Matrisi Örneği
 
@@ -52,44 +84,9 @@ Veri seti temizdir, eksik veri içermez ve sayısal olarak güçlü bir doğrusa
 
 ---
 
-## 🧪 Uygulanan Veri İşleme Adımları
 
-### 📘 Veri Okuma
-
-```python
-df = pd.read_csv("tesla_deliveries_dataset_2015_2025.csv")
-```
-
-## 🧠 Veri İnceleme (EDA)
-
-Veri yüklendikten sonra temel inceleme adımları uygulanmıştır:
-
-
-```python
-df.head()
-df.info()
-df.describe()
-```
-Bu işlemler ile:
-- Veri türleri görüldü
-- Eksik veri olmadığı doğrulandı
-- Sayısal kolonların dağılımı incelendi
-- Modelde kullanacağımız kolonların uygunluğu kontrol edildi
-
-## 🖊️ Eğitim / Test Ayrımı
-
-Modeli daha gerçekçi değerlendirmek için veri eğitim/test olarak ayrıldı:
-```
-from sklearn.model_selection import train_test_split
-
-X = df[["Production_Units"]]
-y = df["Estimated_Deliveries"]
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-```
 ## Lineer Regresyon Modeli
 ![Lineer Regresyon](lineer_regresyon.png)
-
 
 
 
@@ -97,4 +94,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 - Veri seti temiz, dengeli ve analiz için idealdir.
 
 - Üretim miktarı, teslimat miktarını yüksek doğrulukta tahmin edebilmektedir.
+
+## Sonuç
+
+Bu çalışma, Tesla’nın üretim ve teslimat verileri arasında çok güçlü bir doğrusal bağlantı olduğunu göstermektedir.
+Lineer regresyon modeli, gelecekteki teslimat sayılarını tahmin etmek için başarılı bir performans sergilemiştir.
 
