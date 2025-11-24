@@ -79,21 +79,34 @@ Veri seti zaten temiz olduğundan ek bir doldurma veya filtreleme işlemine ihti
 
 
 ![Korelasyon Matrisi](korelasyon_matris.png)
+```
+corr = df.corr()
+plt.imshow(corr, cmap="coolwarm")
+plt.colorbar()
+plt.title("Correlation Heatmap")
+plt.show()
 
-
+```
+Korelasyon tablosu, üretim ve teslimat sütunları arasında çok yüksek bir doğrusal ilişki bulunduğunu doğrular.
+Bu nedenle lineer regresyon modeli için uygun bir veri setidir.
 
 ---
 
 
 ## Lineer Regresyon Modeli
-![Lineer Regresyon](lineer_regresyon.png)
+![Lineer Regresyon](Lineer_regresyon.png)
+```
+plt.scatter(X_test, y_test)
+plt.plot(X_test, y_pred, linewidth=3)
+plt.xlabel("Production Units")
+plt.ylabel("Estimated Deliveries")
+plt.title("Linear Regression Fit")
+plt.show()
 
+```
+Model tarafından oluşturulan çizgi, tahmin edilen teslimat değerlerini temsil eder.
+Gerçek test verileriyle yakın hizalanması modelin yüksek doğruluğunu gösterir.
 
-
-
-- Veri seti temiz, dengeli ve analiz için idealdir.
-
-- Üretim miktarı, teslimat miktarını yüksek doğrulukta tahmin edebilmektedir.
 
 ## Sonuç
 
