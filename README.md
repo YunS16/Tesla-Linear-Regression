@@ -1,14 +1,13 @@
 <p align="center">
-  <img src="tesla.jpg" width="500" height="500">
+  <img src="img/tesla.jpg" width="500" height="500">
 </p>
 
 # 🏎️ Tesla Üretim & Teslimat Analizi (2015–2025)
 
-Bu proje, Tesla'nın 2015–2025 yılları arasındaki üretim ve teslimat verilerini kullanarak  
-**Estimated_Deliveries** değişkenini birden fazla girdi (özellik) yardımıyla tahmin eden  
-basit ama güçlü bir **lineer regresyon** çalışmasıdır.
+Bu proje, Tesla’nın 2015–2025 yılları arasındaki Quarterly Production ve Estimated Deliveries verilerini kullanarak
+“Üretim → Teslimat” ilişkisini analiz eden basit ama öğretici bir lineer regresyon çalışmasıdır.
 
-Veri seti temizdir, eksik veri içermez ve sayısal olarak güçlü bir doğrusal ilişki barındırır.
+Amaç, üretim miktarına bakarak Tesla’nın tahmini teslimat sayısını matematiksel olarak kestirebilmektir.
 
 ## 📦 Proje Yapısı
  Tesla-Linear-Regression
@@ -78,7 +77,7 @@ Veri seti zaten temiz olduğundan ek bir doldurma veya filtreleme işlemine ihti
 ## Korelasyon Matrisi Örneği
 
 
-![Korelasyon Matrisi](korelasyon_matris.png)
+![Korelasyon Matrisi](img/korelasyon_matris.png)
 ```
 # Korelasyon matrisi analizinde kullanılacak değişkenlerin seçilmesi
 corr = df[['Estimated_Deliveries',
@@ -102,7 +101,7 @@ Bu nedenle lineer regresyon modeli için uygun bir veri setidir.
 
 
 ## Lineer Regresyon Modeli
-![Lineer Regresyon](Lineer_regresyon.png)
+![Lineer Regresyon](img/Lineer_regresyon.png)
 ```
 plt.scatter(X_test, y_test)
 plt.plot(X_test, y_pred, linewidth=3)
