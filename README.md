@@ -5,7 +5,7 @@
 
 # 🏎️ Tesla Üretim & Teslimat Analizi (2015–2025)
 
-Bu proje, Tesla’nın 2015–2025 yılları arasında yayımladığı *Quarterly Production* ve *Estimated Deliveries* verilerini kullanarak  
+Bu proje, Tesla’nın 2015–2025 yılları arasında yayımladığı *Production_Units* ve *Estimated Deliveries* verilerini kullanarak  
 **üretim hacminin teslimat sayıları üzerindeki etkisini inceleyen bir lineer regresyon çalışmasıdır.**
 
 Amaç, belirli bir çeyrekte üretilen araç sayısına bakarak Tesla’nın tahmini teslimat performansını matematiksel olarak modellemektir.  
