@@ -2,10 +2,16 @@
   <img src="img/tesla.jpg" width="500" height="500">
 </p>
 
+
 # 🏎️ Tesla Üretim & Teslimat Analizi (2015–2025)
 
-Bu proje, Tesla’nın 2015–2025 yılları arasındaki Quarterly Production ve Estimated Deliveries verilerini kullanarak
-“Üretim → Teslimat” ilişkisini analiz eden bir lineer regresyon çalışmasıdır.
+Bu proje, Tesla’nın 2015–2025 yılları arasında yayımladığı *Quarterly Production* ve *Estimated Deliveries* verilerini kullanarak  
+**üretim hacminin teslimat sayıları üzerindeki etkisini inceleyen bir lineer regresyon çalışmasıdır.**
+
+Amaç, belirli bir çeyrekte üretilen araç sayısına bakarak Tesla’nın tahmini teslimat performansını matematiksel olarak modellemektir.  
+ 
+Bu çalışma; veri analizi, görselleştirme ve makine öğrenimi temellerini bir araya getirerek  
+Tesla’nın üretim–teslimat dinamiklerini istatistiksel olarak ortaya koymayı hedeflemektedir.  
 
 
 ## 📦 Proje Yapısı
@@ -109,6 +115,7 @@ Gerçek test verileriyle yakın hizalanması modelin yüksek doğruluğunu göst
 ## 💯Sonuç
 
 Bu proje kapsamında, Tesla’nın 2015–2025 yılları arasında kaydettiği üretim ve teslimat verileri incelenmiş ve iki değişken arasındaki ilişki lineer regresyon modeli kullanılarak detaylı şekilde analiz edilmiştir. Verilerin hem sayısal yapısı hem de doğrusal dağılımı, doğrusal bir modelin bu probleme uygun olduğunu güçlü biçimde göstermiştir.   
+
 Sonuç olarak bu çalışma, Tesla’nın üretim hacmindeki artışın teslimat sayıları üzerinde doğrusal ve güçlü bir etkisi olduğunu açıkça ortaya koymaktadır. Kullanılan model, hem öğretici hem de pratik bir makine öğrenimi uygulaması olarak proje amacını başarıyla karşılamış ve anlamlı tahminler üretmiştir.
 
 Bu proje, gerçek dünya verilerinin analizinde temel ML yöntemlerinin ne kadar etkili olabileceğini gösteren yalın ama etkili bir örnek niteliği taşımaktadır.
