@@ -136,11 +136,83 @@ Ancak modelin doğrusal olmayan ilişkileri yakalayıp yakalayamadığını gör
 - **Polinomsal Regresyon (degree=2)**
 - **Random Forest Regresyon**
 
-Amaç; farklı modellerin performanslarını karşılaştırarak **hangi modelin Tesla verisini en iyi açıkladığını belirlemek**ti.
+Amaç; farklı modellerin performanslarını karşılaştırarak **hangi modelin Tesla verisini en iyi açıkladığını belirlemekti.
 
+## 🧠 Model Karşılaştırması (Lineer – Polinomsal – Random Forest)
 
+Tesla’nın üretim verilerinden teslimat tahmini yapılırken toplam **3 farklı makine öğrenimi modeli** test edilmiştir:
 
-## 💯Sonuç
+- **Lineer Regresyon**
+- **Polinomsal Regresyon (degree = 2)**
+- **Random Forest Regresyon**
+
+Amaç, bu modellerin performanslarını karşılaştırarak **hangi modelin en doğru sonucu verdiğini belirlemektir.**
+
+---
+
+### 📘 1. Modellerin Eğitim Kodları
+
+#### 🔹 Lineer Regresyon
+```python
+lr_model = LinearRegression()
+lr_model.fit(X_train, y_train)
+lr_pred = lr_model.predict(X_test)
+```
+```
+poly = PolynomialFeatures(degree=2)
+X_train_poly = poly.fit_transform(X_train)
+X_test_poly = poly.transform(X_test)
+```
+### Polinomsal Regresyon (degree = 2)
+```
+poly_model = LinearRegression()
+poly_model.fit(X_train_poly, y_train)
+poly_pred = poly_model.predict(X_test_poly)
+```
+### Random Forest Regresyon
+```
+rf_model = RandomForestRegressor(
+    n_estimators=200,
+    random_state=42
+)
+rf_model.fit(X_train, y_train)
+rf_pred = rf_model.predict(X_test)
+```
+## 2. Model Performans Sonuçları
+![model_sonuc](img/sonuc.png)
+
+## 3. Model Yorumları
+✔️ Lineer Regresyon
+
+Basit ve hızlıdır
+
+Güçlü doğrusal ilişkiyi yakalar
+
+✔️ Polinomsal Regresyon
+
+Doğrusal olmayan ilişkileri daha iyi modelliyor
+
+Lineere göre daha düşük hata verebilir
+
+🏆 Random Forest – En İyi Model
+
+Karmaşık ilişkileri öğrenebilir
+
+Aykırı değerlerden az etkilenir
+
+Çok düşük hata oranına sahiptir
+
+Bu projede en başarılı modeldir
+
+## Model Sonuç
+
+Tesla verilerinde üretim ve teslimat arasında çok güçlü doğrusal bir ilişki vardır.
+Her üç model de başarılı olsa da:
+
+🚀 Teslimat tahmini için en iyi model: Random Forest Regresyon
+
+Model, Tesla’nın üretim hacmine göre teslimat sayısını oldukça yüksek doğrulukla tahmin edebilmektedir.
+## 💯Genel Sonuç
 
 Bu proje kapsamında, Tesla’nın 2015–2025 yılları arasında kaydettiği üretim ve teslimat verileri incelenmiş ve iki değişken arasındaki ilişki lineer regresyon modeli kullanılarak detaylı şekilde analiz edilmiştir. Verilerin hem sayısal yapısı hem de doğrusal dağılımı, doğrusal bir modelin bu probleme uygun olduğunu güçlü biçimde göstermiştir.   
 
