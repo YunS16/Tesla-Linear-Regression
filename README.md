@@ -178,36 +178,102 @@ rf_pred = rf_model.predict(X_test)
 ![model_sonuc](img/sonuc.png)
 
 ## 3. Model Yorumları
+## 📌 Model Seçimi
+
+Tesla’nın 2015–2025 yılları arasındaki üretim (Production Units) ve tahmini teslimat (Estimated Deliveries) verileri incelendiğinde iki değişken arasında **yüksek pozitif doğrusal ilişki** bulundu.
+
+Bu nedenle ilk olarak:
+
+- **Lineer Regresyon** modeli temel bir yaklaşım olarak seçildi.
+
+Ancak modelin doğrusal olmayan ilişkileri yakalayıp yakalayamadığını görmek için ek olarak şu modeller de denendi:
+
+- **Polinomsal Regresyon (degree=2)**
+- **Random Forest Regresyon**
+
+Amaç; farklı modellerin performanslarını karşılaştırarak **hangi modelin Tesla verisini en iyi açıkladığını belirlemekti.
+
+## 🧠 Model Karşılaştırması (Lineer – Polinomsal – Random Forest)
+
+Tesla’nın üretim verilerinden teslimat tahmini yapılırken toplam **3 farklı makine öğrenimi modeli** test edilmiştir:
+
+- **Lineer Regresyon**
+- **Polinomsal Regresyon (degree = 2)**
+- **Random Forest Regresyon**
+
+Amaç, bu modellerin performanslarını karşılaştırarak **hangi modelin en doğru sonucu verdiğini belirlemektir.**
+
+---
+
+### 📘 1. Modellerin Eğitim Kodları
+
+#### 🔹 Lineer Regresyon
+```python
+lr_model = LinearRegression()
+lr_model.fit(X_train, y_train)
+lr_pred = lr_model.predict(X_test)
+```
+```
+poly = PolynomialFeatures(degree=2)
+X_train_poly = poly.fit_transform(X_train)
+X_test_poly = poly.transform(X_test)
+```
+### Polinomsal Regresyon (degree = 2)
+```
+poly_model = LinearRegression()
+poly_model.fit(X_train_poly, y_train)
+poly_pred = poly_model.predict(X_test_poly)
+```
+### Random Forest Regresyon
+```
+rf_model = RandomForestRegressor(
+    n_estimators=200,
+    random_state=42
+)
+rf_model.fit(X_train, y_train)
+rf_pred = rf_model.predict(X_test)
+```
+## 2. Model Performans Sonuçları
+![model_sonuc](img/sonuc.png)
+
+## 3. Model Yorumları
 ✔️ Lineer Regresyon
 
 Basit ve hızlıdır
 
-Güçlü doğrusal ilişkiyi yakalar
+Güçlü doğrusal ilişkiyi iyi yakalar
 
-✔️ Polinomsal Regresyon
+Karmaşık yapıyı modellemek sınırlıdır
 
-Doğrusal olmayan ilişkileri daha iyi modelliyor
+✔️ Polinomsal Regresyon (d=2)
 
-Lineere göre daha düşük hata verebilir
+Doğrusal olmayan ilişkileri daha iyi modeller
 
-🏆 Random Forest – En İyi Model
+Lineer modele göre daha düşük hata verdi
+
+Bu projede en yüksek doğruluğa sahip model olmuştur
+
+✔️ Random Forest Regresyon
 
 Karmaşık ilişkileri öğrenebilir
 
-Aykırı değerlerden az etkilenir
+Aykırı değerlerden daha az etkilenir
 
-Çok düşük hata oranına sahiptir
+Ancak bu veri setinde Polinomsal Regresyon kadar iyi performans göstermemiştir
 
-Bu projede en başarılı modeldir
+## Model Sonuç
+Veri analizine göre değişkenler arasında güçlü bir doğrusal ilişki bulunduğu için ilk model olarak Lineer Regresyon denenmiştir.
+Daha sonra doğruluğu artırmak amacıyla Polinomsal Regresyon ve Random Forest modelleri test edilmiştir.
+
+Karşılaştırma sonuçlarına göre en iyi performans, en düşük hata ve en yüksek R² değeri Polinomsal Regresyon (degree=2) modeline aittir.
+
+Bu nedenle proje sonucunda en başarılı model Polinomsal Regresyon olarak seçilmiştir.
 
 ## Model Sonuç
 
-Tesla verilerinde üretim ve teslimat arasında çok güçlü doğrusal bir ilişki vardır.
-Her üç model de başarılı olsa da:
+Veri analizine göre değişkenler arasında güçlü bir doğrusal ilişki bulunduğu için ilk model olarak Lineer Regresyon kullanıldı.
+Daha sonra model performansını artırmak amacıyla Polinomsal Regresyon ve Random Forest modelleri de denenmiş, bu karşılaştırma sonucunda en düşük hata değerini Random Forest modelinin verdiği görülmüştür
 
-🚀 Teslimat tahmini için en iyi model: Random Forest Regresyon
-
-Model, Tesla’nın üretim hacmine göre teslimat sayısını oldukça yüksek doğrulukla tahmin edebilmektedir.
 ## 💯Genel Sonuç
 
 Bu proje kapsamında, Tesla’nın 2015–2025 yılları arasında kaydettiği üretim ve teslimat verileri incelenmiş ve iki değişken arasındaki ilişki lineer regresyon modeli kullanılarak detaylı şekilde analiz edilmiştir. Verilerin hem sayısal yapısı hem de doğrusal dağılımı, doğrusal bir modelin bu probleme uygun olduğunu güçlü biçimde göstermiştir.   
